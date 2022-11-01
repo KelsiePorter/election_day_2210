@@ -1,5 +1,3 @@
-require './lib/candidate'
-
 class Election
   attr_reader :year,
               :races,
