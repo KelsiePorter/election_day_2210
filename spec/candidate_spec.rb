@@ -14,4 +14,13 @@ RSpec.describe Candidate do
     expect(diana.party).to eq(:democrat)
   end
 
+  it 'candidate submits their votes' do 
+
+    expect(diana.votes).to eq(0)
+
+    3.times {diana.vote_for!}
+    
+    expect(diana.votes).to eq(3)
+  end
+
 end
