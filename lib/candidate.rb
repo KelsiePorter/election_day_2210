@@ -1,7 +1,7 @@
 class Candidate
   attr_reader :name,
-              :party,
-              :votes 
+              :party
+  attr_accessor :votes 
 
   def initialize(candinate_info)
     @name = candinate_info[:name]
