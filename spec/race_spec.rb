@@ -29,9 +29,26 @@ RSpec.describe Race do
     candidate1 = race1.register_candidate!({name: "Diana D", party: :democrat})
     candidate2 = race1.register_candidate!({name: "Roberto R", party: :republican})
 
-    4.times {candidate1.vote_for!}
-    1.times {candidate2.vote_for!}
+    expect(race1.open?).to be true
+  end
+
+  it 'race does not have a winner until the race is closed' do 
+    race1 = Race.new("Texas Governor")
+    candidate1 = race1.register_candidate!({name: "Diana D", party: :democrat})
+    candidate2 = race1.register_candidate!({name: "Roberto R", party: :republican})
+
+    expect(race1.winner).to be false
+  end
+
+  it 'race has a winner when the race is no longer open' do 
+    race1 = Race.new("Texas Governor")
+    candidate1 = race1.register_candidate!({name: "Diana D", party: :democrat})
+    candidate2 = race1.register_candidate!({name: "Roberto R", party: :republican})
 
     expect(race1.open?).to be true
+
+    race1.close!
+
+    expect(race1.open?).to be false  
   end
 end
