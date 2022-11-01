@@ -1,4 +1,3 @@
-require 'pry'
 require './lib/candidate'
 
 class Race
@@ -15,5 +14,4 @@ class Race
     @candidates << new_candidate
     new_candidate
   end
-
 end

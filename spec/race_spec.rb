@@ -23,5 +23,4 @@ RSpec.describe Race do
     
     expect(race.candidates).to eq([candidate1, candidate2])
   end
-
 end
