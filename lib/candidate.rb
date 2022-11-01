@@ -12,5 +12,4 @@ class Candidate
   def vote_for! 
     @votes += 1
   end
-
 end
