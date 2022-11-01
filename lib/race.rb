@@ -1,8 +1,8 @@
 require './lib/candidate'
 
 class Race
-  attr_reader :office,
-              :candidates
+  attr_reader   :office,
+                :candidates
   attr_accessor :open
 
   def initialize(office)
